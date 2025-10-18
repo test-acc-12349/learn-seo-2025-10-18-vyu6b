@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn SEO Today - Master search engine optimization at your own pace with our comprehensive beginner-friendly modules.">
+    <meta name="keywords" content="SEO, Search Engine Optimization, Learn SEO, Digital Marketing">
+    <meta name="author" content="Learn SEO">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Learn SEO Today - Master Search Engine Optimization">
+    <meta property="og:description" content="Learn SEO Today - Master search engine optimization at your own pace with our comprehensive beginner-friendly modules.">
+    <meta property="og:type" content="website">
+    <title>Learn SEO Today - Master Search Engine Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.65) 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-secondary {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .accordion-button.active {
+            background-color: #f3f4f6;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+            border-radius: 0.5rem;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                <span class="text-2xl font-bold text-gray-900">Learn SEO</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Home</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Features</a>
+                <a href="#benefits" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Benefits</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">About</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Testimonials</a>
+                <a href="#faq" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden text-gray-700 hover:text-blue-600 transition-colors duration-300" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-200" id="mobileMenu">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col space-y-4">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">Home</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">Features</a>
+                <a href="#benefits" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">Benefits</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">About</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">Testimonials</a>
+                <a href="#faq" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f70504504?w=1200&h=800&fit=crop" alt="SEO Learning Background" class="w-full h-full object-cover opacity-25">
+        </div>
+        
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 z-10 hero-overlay"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">Learn SEO</h1>
+            <p class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed max-w-3xl mx-auto">Learn SEO Today</p>
+            <p class="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed max-w-2xl mx-auto">Master search engine optimization at your own pace with our comprehensive, beginner-friendly modules designed to transform your digital presence.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://seo.com" class="btn-primary inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300">
+                    Start Learning Now
+                </a>
+                <a href="#features" class="btn-secondary inline-block bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Why Choose Our SEO Course?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover the features that make our platform the perfect choice for SEO learners of all levels.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Feature 1: For Beginners -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg mb-6">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">For Beginners</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Our course is specifically designed for beginners with no prior SEO experience. We start from the fundamentals and gradually build your knowledge with easy-to-understand concepts, practical examples, and real-world applications that you can implement immediately.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Step-by-step guidance
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            No technical skills required
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Interactive lessons
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2: Learn At Own Pace -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg mb-6">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Learn At Your Own Pace</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">We understand that everyone learns differently. That's why our platform offers complete flexibility. Access course materials anytime, anywhere, and progress through modules at a speed that works best for you. No strict deadlines or pressure.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            24/7 access to content
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Lifetime course access
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Learn from any device
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Transform Your SEO Knowledge</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore the key benefits of our comprehensive SEO learning program.</p>
+            </div>
+            
+            <!-- Benefit 1: Module by Module -->
+            <div class="mb-16 flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2 slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Module by Module Learning" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="lg:w-1/2 slide-in-right">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Module by Module</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">Our curriculum is organized into carefully structured modules that build upon each other. Each module focuses on specific SEO topics, allowing you to master one concept before moving to the next. This structured approach ensures a comprehensive understanding of search engine optimization principles and practices.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Keyword Research Mastery:</strong> Learn to find and analyze high-value keywords</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>On-Page Optimization:</strong> Master techniques to optimize your website content</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Technical SEO:</strong> Understand site structure and performance optimization</span>
+                        </li>
+                    </ul>
+                    <a href="https://seo.com" class="btn-primary inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300">
+                        Explore Modules
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Benefit 2: Online Learning -->
+            <div class="mb-16 flex flex-col lg:flex-row-reverse items-center gap-8">
+                <div class="lg:w-1/2 slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Online Learning Platform" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="lg:w-1/2 slide-in-left">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Fully Online Platform</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">Access everything you need through our intuitive online platform. Whether you're using a desktop, tablet, or smartphone, our responsive design ensures a seamless learning experience. No software downloads or complicated installations required – just log in and start learning.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Responsive Design:</strong> Perfect experience on all devices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Interactive Tools:</strong> Practice with real SEO tools and analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Progress Tracking:</strong> Monitor your learning journey with detailed analytics</span>
+                        </li>
+                    </ul>
+                    <a href="https://seo.com" class="btn-primary inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300">
+                        Start Learning Online
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Benefit 3: Expert Support -->
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2 slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Expert Support and Community" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="lg:w-1/2 slide-in-right">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Expert Support & Community</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">You're never alone on your SEO learning journey. Our platform provides access to expert instructors, a vibrant community of learners, and comprehensive resources. Get your questions answered, share your progress, and learn from others who are on the same path.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Expert Q&A:</strong> Get answers from SEO professionals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Community Forum:</strong> Connect with thousands of learners worldwide</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-blue-600 mt-1 mr-3 flex-shrink-0"></i>
+                            <span class="text-gray-700"><strong>Resource Library:</strong> Access templates, guides, and case studies</span>
+                        </li>
+                    </ul>
+                    <a href="https://seo.com" class="btn-primary inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300">
+                        Join Our Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">See SEO Learning in Action</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Watch our introductory video to understand how our platform can transform your SEO knowledge.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SQ5WuEtsMt0" title="Learn SEO Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">About Learn SEO</h2>
+                <p class="text-lg text-gray-600">Discover our story and mission</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Learn SEO Team" class="w-full rounded-lg shadow-lg">
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="fade-in-up">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Story</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Founded in 2015, Learn SEO was born from a simple observation: quality SEO education was expensive, overcomplicated, and inaccessible to most people. Our founders, a group of experienced digital marketers and SEO specialists, decided to change that. They created a platform that democratizes SEO knowledge, making it available to entrepreneurs, small business owners, and aspiring digital marketers worldwide. Over the past eight years, we've helped over 100,000 students master SEO and transform their online presence. Our commitment to excellence and student success has made us one of the most trusted SEO learning platforms globally.
+                        </p>
+                    </div>
+                    
+                    <div class="fade-in-up">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            We believe that everyone deserves access to world-class SEO education. Our mission is to empower individuals and businesses with the knowledge and skills they need to succeed in the digital landscape. We're committed to providing practical, up-to-date, and easy-to-understand SEO training that delivers real results. Through our innovative platform, expert instructors, and supportive community, we're dedicated to helping you achieve your online goals and build a sustainable, profitable digital presence. Your success is our success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">What Our Students Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied learners who have transformed their SEO skills and achieved remarkable results.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "Learn SEO completely transformed my understanding of digital marketing. Within three months of completing the course, my website's organic traffic increased by 250%. The module-by-module approach made complex concepts easy to understand, and the practical assignments really helped me apply what I learned. Highly recommended!"
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                        <p class="text-gray-600 text-sm">Content Marketing Manager, Digital Ventures Inc.</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "As a complete beginner, I was intimidated by SEO. But this course broke everything down into manageable pieces. The instructors are knowledgeable, the platform is user-friendly, and the community support is fantastic. I now rank on the first page for three competitive keywords in my niche. Best investment I've made for my business!"
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="font-bold text-gray-900">James Rodriguez</p>
+                        <p class="text-gray-600 text-sm">Freelance Web Developer & Entrepreneur</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "I've taken several online courses, but Learn SEO stands out for its practical approach. The lessons are current with the latest algorithm updates, and I appreciate the flexibility to learn at my own pace while managing my full-time job. My site's conversion rate improved by 45% after implementing the strategies I learned."
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="font-bold text-gray-900">Emily Chen</p>
+                        <p class="text-gray-600 text-sm">E-commerce Business Owner</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        "The support team at Learn SEO is exceptional. I had questions about technical SEO, and they provided detailed answers with actionable solutions. The course materials are comprehensive, and the video tutorials are clear and easy to follow. I've already recommended this course to five colleagues!"
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="font-bold text-gray-900">Michael Thompson</p>
+                        <p class="text-gray-600 text-sm">Digital Marketing Specialist, Tech Solutions Ltd.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Find answers to common questions about our SEO learning platform.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full px-6 py-4 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between" onclick="toggleAccordion(this)">
+                        <span>Do I need any prior SEO experience to take this course?</span>
+                        <i class="fas fa-chevron-down text-blue-600"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50 px-6 py-4">
+                        <p class="text-gray-600 leading-relaxed">
+                            No, absolutely not! Our course is specifically designed for beginners with no prior SEO experience. We start from the very fundamentals and build your knowledge progressively. Each module assumes you're starting fresh and provides comprehensive explanations of all concepts. Whether you're a complete beginner or someone with basic knowledge looking to deepen your skills, our course has something for you. We believe everyone can master SEO with the right guidance and practice.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full px-6 py-4 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between" onclick="toggleAccordion(this)">
+                        <span>How long does it take to complete the course?</span>
+                        <i class="fas fa-chevron-down text-blue-600"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50 px-6 py-4">
+                        <p class="text-gray-600 leading-relaxed">
+                            The course typically takes between 8-12 weeks to complete if you dedicate 5-7 hours per week. However, since you have lifetime access to all materials, you can learn at your own pace. Some students complete it faster by dedicating more time each week, while others prefer a slower, more thorough approach. There's no rush – you can pause, resume, and revisit modules whenever you need. We recommend setting a realistic schedule that fits your lifestyle and commitments.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full px-6 py-4 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between" onclick="toggleAccordion(this)">
+                        <span>Will I receive a certificate upon completion?</span>
+                        <i class="fas fa-chevron-down text-blue-600"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50 px-6 py-4">
+                        <p class="text-gray-600 leading-relaxed">
+                            Yes! Upon completing all modules and passing the final assessment, you'll receive a professional certificate of completion. This certificate is recognized by industry professionals and can be added to your LinkedIn profile, resume, or portfolio. It demonstrates your commitment to professional development and validates your SEO knowledge. Many of our graduates have used this certificate to advance their careers, land better positions, or attract more clients to their freelance businesses.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full px-6 py-4 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between" onclick="toggleAccordion(this)">
+                        <span>What if I have questions or need help during the course?</span>
+                        <i class="fas fa-chevron-down text-blue-600"></i>
+                    </button>
+                    <div class="accordion-content bg-gray-50 px-6 py-4">
+                        <p class="text-gray-600 leading-relaxed">
+                            We provide comprehensive support through multiple channels. You can post questions in our community forum where instructors and fellow students help answer them. We also offer direct email support at admin@seo.com for specific issues. Additionally, we host weekly live Q&A sessions where you can ask instructors anything in real-time. Our support team typically responds to inquiries within 24 hours. We're committed to ensuring you have the help you need to succeed in your SEO learning journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-16 md:py-24 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f70504504?w=1200&h=600&fit=crop" alt="Call to Action Background" class="w-full h-full object-cover opacity-30">
+        </div>
+        
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 z-10 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 opacity-85"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Ready to Master SEO?</h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Join thousands of successful students who have transformed their SEO skills. Start your journey today and unlock unlimited growth potential for your online presence.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://seo.com" class="btn-primary inline-block bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-10 rounded-lg shadow-lg transition-all duration-300 text-lg">
+                    Enroll Now
+                </a>
+                <a href="#contact" class="btn-secondary inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg shadow-lg transition-all duration-300 text-lg border-2 border-white">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Have questions about our SEO course? We'd love to hear from you. Contact us today and let's discuss how we can help you achieve your SEO goals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Info 1: Email -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-6">
+                        <i class="fas fa-envelope text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+                    <p class="text-gray-600 mb-4">Reach out to us via email for any inquiries or support.</p>
+                    <a href="mailto:admin@seo.com" class="text-blue-600 hover:text-blue-700 font-bold transition-colors duration-300">admin@seo.com</a>
+                </div>
+                
+                <!-- Contact Info 2: Website -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-6">
+                        <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Website</h3>
+                    <p class="text-gray-600 mb-4">Visit our website for more information and resources.</p>
+                    <a href="https://seo.com" target="_blank" class="text-blue-600 hover:text-blue-700 font-bold transition-colors duration-300">https://seo.com</a>
+                </div>
+                
+                <!-- Contact Info 3: Response Time -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-6">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Response Time</h3>
+                    <p class="text-gray-600 mb-4">We typically respond to inquiries within 24 hours.</p>
+                    <p class="text-blue-600 font-bold">Monday - Friday, 9AM - 5PM EST</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1: About -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-graduation-cap text-blue-400 text-2xl"></i>
+                        <span class="text-xl font-bold text-white">Learn SEO</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Empowering individuals and businesses with world-class SEO education to achieve online success and sustainable growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a>
+                        </li>
+                        <li>
+                            <a href="#features" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Features</a>
+                        </li>
+                        <li>
+                            <a href="#benefits" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Benefits</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Testimonials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Resources -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="blog.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Blog</a>
+                        </li>
+                        <li>
+                            <a href="privacy.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="terms.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-blue-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">
+                                <a href="mailto:admin@seo.com" class="hover:text-blue-400 transition-colors duration-300">admin@seo.com</a>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-blue-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">
+                                <a href="https://seo.com" target="_blank" class="hover:text-blue-400 transition-colors duration-300">https://seo.com</a>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-blue-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">Monday - Friday<br>9AM - 5PM EST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-gray-700 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; <span id="year"></span> Learn SEO. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="privacy.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm">Terms of Service</a>
+                        <a href="blog.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Accordion Functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.accordion-button').forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove('active');
+                    btn.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            button.classList.toggle('active');
+            
+            // Rotate icon
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
